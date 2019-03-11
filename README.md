@@ -41,3 +41,13 @@ For writing of figures created by MTEX to disk, the function `export_fig`, creat
 ```matlab
 export_fig([path 'odf_fibre_cube_goss.png'],'-r100')
 ```
+
+### texeval2mtex2discreteOri.m
+
+Matlab script used to call the `PlotODFandExtractOrientations` function described below.
+
+### PlotODFandExtractOrientations.m
+
+Matlab function that creates a MTEX PoleFigure object from four (or three, five, etc.) pole figures by using loadPoleFigure_generic, and then calculate the ODF, plots the ODF and extracts Nori number of discrete orientations using Niter iterations, and writes the orientations to a file compatible with the Auswert program by Olaf Engler.
+
+The function `export_fig`, created by Yair Altman available here [export_fig - File Exchange](https://se.mathworks.com/matlabcentral/fileexchange/23629-export_fig), is used to save contour plots of the experimental ODF and the ODF from the discrete orientations.

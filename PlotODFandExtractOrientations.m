@@ -4,7 +4,7 @@
 % Plots the ODF and extracts a set of discrete orientations that represent the ODF
 % Writes the orientations to a file compatible with the Auswert program by Olaf Engler
 %
-% Author  : Bjørn Håkon Frodal
+% Author  : Bjï¿½rn Hï¿½kon Frodal
 % Contact : bjorn.h.frodal@ntnu.no
 %
 % Working with:
@@ -62,11 +62,6 @@ intensities = {
     pf4.intensities};
 pfs = PoleFigure(h,pf1.r,intensities,cs,ss);
 
-%% Plot pole figures of raw, corrected data
-% figure
-% plot(pfs,'upper','projection','eangle','minmax')
-% mtexColorbar('location','southOutside')
-
 %% Calculate the ODF using default settings
 disp('Calculating ODF')
 odf = calcODF(pfs);
@@ -74,13 +69,8 @@ odf = calcODF(pfs);
 % Set correct specimen symmetry for calculation of texture strength
 odf.SS = ssO;
 
-% Calculate texture strength
-% textureIndex = odf.textureindex
-% entropy = odf.entropy
-% odfMax = odf.max
-
 %% Extract N orientations from ODF
-disp(['Extracting ',num2str(Nori),' orientations from ODF'])
+disp(['Extracting ',num2str(Nori),' orientations from ODF, using ',num2str(Niter),' iterations'])
 
 error=inf;
 progress(0,Niter)
@@ -122,10 +112,7 @@ fcl=fclose(ID);
 %% Plot ODF in Euler space phi2 sections
 disp('Plotting ODFs')
 
-% figure
-% plot(odf,'phi2',[0 45 65]*degree,'contourf','minmax')
-% mtexColorMap white2black
-
+% plotting experimental odf
 figure
 plot(odf,'phi2',[0 45 65]*degree,'contourf',levelsODF,'minmax')
 mtexColorMap white2black
@@ -133,10 +120,7 @@ mtexColorbar('location','southoutside')
 
 export_fig([path fnamesPrefix '_odf.pdf'])
 
-% figure
-% plot(odf_extract,'phi2',[0 45 65]*degree,'contourf','minmax')
-% mtexColorMap white2black
-
+% plotting odf from discrete orientations
 figure
 plot(odf_extract,'phi2',[0 45 65]*degree,'contourf',levelsODF,'minmax')
 mtexColorMap white2black
