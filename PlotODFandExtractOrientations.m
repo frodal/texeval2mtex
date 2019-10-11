@@ -4,7 +4,7 @@
 % Plots the ODF and extracts a set of discrete orientations that represent the ODF
 % Writes the orientations to a file compatible with the Auswert program by Olaf Engler
 %
-% Author  : Bjï¿½rn Hï¿½kon Frodal
+% Author  : Bjørn Håkon Frodal
 % Contact : bjorn.h.frodal@ntnu.no
 %
 % Working with:
@@ -106,6 +106,22 @@ fprintf(ID,'%s %2d \n','PHI2',SeriesRank);
 fprintf(ID,'%d %3d %2.1f \n',Nori,0,GaussianSmoothing);
 for i=1:Nori
     fprintf(ID,'%6.2f %6.2f %6.2f %8.6f %5.2f \n',phi1(i),Phi(i),phi2(i),1,0);
+end
+fcl=fclose(ID);
+
+% Writes orientations to .inp file for FC-Taylor
+
+ID=fopen([path,'Euler.inp'],'w');
+
+fprintf(ID,'%s \n','**');
+fprintf(ID,'%s \n','**');
+fprintf(ID,'%s \n','** Euler angles file');
+fprintf(ID,'%s \n','**');
+fprintf(ID,'%s \n','**');
+fprintf(ID,'%s \n','*EULER');
+fprintf(ID,'%s \n','**phi1,    PHI,   phi2,  weight');
+for i=1:length(phi1)
+    fprintf(ID,'%6.2f, %6.2f, %6.2f, %7.2f \n',phi1(i),PHI(i),phi2(i),1);
 end
 fcl=fclose(ID);
 
