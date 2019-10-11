@@ -121,7 +121,7 @@ fprintf(ID,'%s \n','**');
 fprintf(ID,'%s \n','*EULER');
 fprintf(ID,'%s \n','**phi1,    PHI,   phi2,  weight');
 for i=1:length(phi1)
-    fprintf(ID,'%6.2f, %6.2f, %6.2f, %7.2f \n',phi1(i),PHI(i),phi2(i),1);
+    fprintf(ID,'%6.2f, %6.2f, %6.2f, %7.2f \n',phi1(i),Phi(i),phi2(i),1);
 end
 fcl=fclose(ID);
 
