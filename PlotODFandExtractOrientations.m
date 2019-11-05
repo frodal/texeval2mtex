@@ -4,12 +4,12 @@
 % Plots the ODF and extracts a set of discrete orientations that represent the ODF
 % Writes the orientations to a file compatible with the Auswert program by Olaf Engler
 %
-% Author  : Bjørn Håkon Frodal
+% Author  : BjÃ¸rn HÃ¥kon Frodal
 % Contact : bjorn.h.frodal@ntnu.no
 %
 % Working with:
 %   MATLAB R2018a
-%   MTEX-5.1.1
+%   MTEX 5.2.beta2
 %
 % Requires:
 %   MTEX (Available here:
@@ -23,10 +23,10 @@ function [odf,odf_extract,ori]=PlotODFandExtractOrientations(path,fnamesPrefix,l
 cs = crystalSymmetry('m-3m',[4.04 4.04 4.04],'mineral','Al');
 
 fnames = {
-    [path fnamesPrefix '_pf111_uncorr.dat'],...
-    [path fnamesPrefix '_pf200_uncorr.dat'],...
-    [path fnamesPrefix '_pf220_uncorr.dat'],...
-    [path fnamesPrefix '_pf311_uncorr.dat']};
+    fullfile(path, [fnamesPrefix '_pf111_uncorr.dat']),...
+    fullfile(path, [fnamesPrefix '_pf200_uncorr.dat']),...
+    fullfile(path, [fnamesPrefix '_pf220_uncorr.dat']),...
+    fullfile(path, [fnamesPrefix '_pf311_uncorr.dat'])};
 
 % Specimen symmetry
 ss = specimenSymmetry('1'); % Triclinic

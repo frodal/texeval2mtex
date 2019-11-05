@@ -4,12 +4,12 @@
 % Plots the ODF and extracts a set of discrete orientations that represent the ODF
 % Writes the orientations to a file compatible with the Auswert program by Olaf Engler
 %
-% Author  : Bjørn Håkon Frodal
+% Author  : BjÃ¸rn HÃ¥kon Frodal
 % Contact : bjorn.h.frodal@ntnu.no
 %
 % Working with:
 %   MATLAB R2018a
-%   MTEX-5.1.1
+%   MTEX 5.2.beta2
 %
 % Requires:
 %   MTEX (Available here:
@@ -41,5 +41,4 @@ GaussianSmoothing=7.0;
 SeriesRank=23;
 
 %% Plot ODF and extract orientations
-
 [odf_experimental,odf_orientations,orientations]=PlotODFandExtractOrientations(path,fnamesPrefix,levelsODF,Nori,Niter,GaussianSmoothing,SeriesRank);
