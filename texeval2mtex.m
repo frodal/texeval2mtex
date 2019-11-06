@@ -10,7 +10,7 @@
 %
 % Working with:
 %   MATLAB > R2018a
-%   MTEX 5.2.beta2
+%   MTEX 5.2
 
 %% Import pole figure data and create PoleFigure object
 cs = crystalSymmetry('m-3m', [4.04 4.04 4.04], 'mineral', 'Al');

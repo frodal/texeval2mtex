@@ -8,8 +8,8 @@
 % Contact : bjorn.h.frodal@ntnu.no
 %
 % Working with:
-%   MATLAB R2018a
-%   MTEX 5.2.beta2
+%   MATLAB > R2018a
+%   MTEX 5.2
 %
 % Requires:
 %   MTEX (Available here:
