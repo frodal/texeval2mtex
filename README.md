@@ -42,7 +42,7 @@ For writing of figures created by MTEX to disk, the function `export_fig`, creat
 export_fig([path 'odf_fibre_cube_goss.png'],'-r100')
 ```
 
-Uses functions implemented in MTEX 5.2.beta2.
+Uses functions implemented in MTEX 5.2.
 
 ### texeval2mtex2discreteOri.m
 
