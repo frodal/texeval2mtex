@@ -79,8 +79,8 @@ for k=1:Niter
 
     % Calculating ODF from extracted orientations
 %     psi_tmp = calcKernel(ori_tmp);
-%     odf_extract_tmp = calcODF(ori_tmp,'kernel',psi_tmp);
-    odf_extract_tmp = calcODF(ori_tmp);
+%     odf_extract_tmp = calcDensity(ori_tmp,'kernel',psi_tmp);
+    odf_extract_tmp = calcDensity(ori_tmp);
     odf_extract_tmp.SS=ssO;
     error_tmp = calcError(odf_extract_tmp,odf,'resolution',5*degree);
     if error_tmp<error
